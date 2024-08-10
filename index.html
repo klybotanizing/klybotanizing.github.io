@@ -305,28 +305,28 @@
 				<!-- Nine -->
 					<section class="wrapper style1 align-center">
 						<div class="inner medium">
-							<h1>***UNDER CONSTRUCTION***</h1>
 							<h2>Send me a message!</h2>
-							<form method="post" action="#">
+							<form name="gform" id="gform" method="POST" enctype="application/x-www-form-urlencoded" action="https://docs.google.com/forms/d/e/1FAIpQLSdtDEju1GnIQsLD_H3sdvmgDx1JDDlM8cPfZZaw05xdijmfvA/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" value="" />
+										<input type="text" name="entry.1239785594" id="entry.1239785594"/>
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" value="" />
+										<input type="text" name="entry.1835699629" id="entry.1835699629"/>
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
+										<textarea name="entry.809257729" id="entry.809257729" rows="6"></textarea>
 									</div>
 								</div>
 								<ul class="actions special">
 									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
 								</ul>
 							</form>
-
+							<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+							
 						</div>
 					</section>
 
@@ -347,6 +347,13 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script type="text/javascript">var submitted=false;</script>
+			<script type="text/javascript">
+			$('#gform').on('submit', function(e) {
+			$('#gform *').fadeOut(2000);
+			$('#gform').prepend('Your submission has been processed...');
+			});
+			</script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
